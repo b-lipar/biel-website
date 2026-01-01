@@ -8,7 +8,7 @@
 
 /* Background: subtle institutional architecture with strong readability overlay */
 #bg:before{
-  background-image: url("../../images/architecture-bg3.jpg") !important;
+  background-image: url("../../images/architecture-bg3.png") !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -239,3 +239,21 @@ ul.icons li a:active {
   box-shadow: 0 10px 22px rgba(0,0,0,0.10);
 }
 
+/* =====================================================
+   Fade-in on load (dark -> background), including image
+   ===================================================== */
+
+/* Ensure bg layers can animate */
+#bg:before,
+#bg:after {
+  transition: opacity 1.2s ease;
+  will-change: opacity;
+}
+
+/* Start dark while loading */
+body.is-preload #bg:before { opacity: 0; }
+body.is-preload #bg:after  { opacity: 1; background-color: rgba(0,0,0,0.85) !important; }
+
+/* Fade to your normal background after preload */
+body:not(.is-preload) #bg:before { opacity: 1; }
+body:not(.is-preload) #bg:after  { opacity: 1; background-color: rgba(255,255,255,0.90) !important; }
