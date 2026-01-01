@@ -33,12 +33,6 @@
 #main article h2, #main article h3, #main article h4{
   color:var(--text);
 }
-
-/* Header readability */
-#header .content{
-  background: rgba(255,255,255,0.35);
-  border-color: rgba(27,31,34,0.18);
-}
 #header .content .inner{
   text-align:left;
 }
@@ -60,10 +54,10 @@ a:hover{
 
 /* Logo ring */
 #header .logo{
-  border-color:rgba(43,108,176,0.6);
+  display: none !important;
 }
 #header .logo .icon:before{
-  color:var(--accent);
+ color: rgba(27,31,34,0.65) !important;
 }
 
 /* Simple button system (Dimension doesn't expose a strong primary by default) */
@@ -133,19 +127,6 @@ a.button.primary:hover, .button.primary:hover, input[type="submit"].primary:hove
 body, input, select, textarea {
   color: var(--text);
 }
-
-/* Replace white borders/text with subtle dark */
-#header nav ul li a {
-  box-shadow: inset 0 0 0 1px var(--border);
-  color: rgba(27,31,34,0.9);
-}
-#header nav ul li a:hover {
-  background-color: rgba(43,108,176,0.08);
-}
-#header nav ul li a:active {
-  background-color: rgba(43,108,176,0.16);
-}
-
 /* Icons border */
 ul.icons li a {
   box-shadow: inset 0 0 0 1px var(--border);
@@ -179,7 +160,7 @@ ul.icons li a:active {
 /* Hero panel: more transparent + blurred background behind */
 #header .content {
   background: rgba(255, 255, 255, 0.50);
-  border: 1px solid #2c5fa8;
+  border: none;
   border-radius: 10px;
   padding: 1.4rem 1.6rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -207,7 +188,7 @@ ul.icons li a:active {
 #header nav ul li a {
   background: rgba(255,255,255,0.45);
   color: #1c2330 !important;
-  border: 1px solid #2c5fa8 !important;
+  border: none !important;
 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
