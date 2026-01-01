@@ -8,7 +8,7 @@
 
 /* Background: subtle institutional architecture with strong readability overlay */
 #bg:before{
-  background-image: url("../../images/architecture-bg3.png") !important;
+  background-image: url("../../images/architecture-bg4.jpg") !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -257,3 +257,48 @@ body.is-preload #bg:after  { opacity: 1; background-color: rgba(0,0,0,0.85) !imp
 /* Fade to your normal background after preload */
 body:not(.is-preload) #bg:before { opacity: 1; }
 body:not(.is-preload) #bg:after  { opacity: 1; background-color: rgba(255,255,255,0.90) !important; }
+
+/* =====================================================
+   Proper fade-in on load (dark -> background) with image
+   Uses:
+   - #bg:before = image + light overlay (gradient layer)
+   - #bg:after  = dark curtain that fades out
+   ===================================================== */
+
+/* 1) Background image + your normal light overlay in ONE layer */
+#bg:before {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.90), rgba(255,255,255,0.90)),
+    url("../images/architecture-bg.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  opacity: 1 !important;
+}
+
+/* 2) Dark curtain above the background that will fade out */
+#bg:after {
+  background-image: none !important;
+  background-color: rgba(0,0,0,0.85) !important;
+  opacity: 0; /* default = hidden after load */
+}
+
+/* Animate the curtain opacity */
+#bg:after {
+  transition: opacity 1.2s ease;
+  will-change: opacity;
+}
+
+/* During initial load, show the dark curtain */
+body.is-preload #bg:after {
+  opacity: 1 !important;
+}
+
+/* Mobile: optional – keep it simple */
+@media (max-width: 768px) {
+  #bg:before {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
+      url("../images/architecture-bg.jpg") !important;
+  }
+}
