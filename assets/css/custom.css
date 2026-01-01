@@ -177,8 +177,8 @@ ul.icons li a:active {
 
 /* --- Hero readability panel --- */
 #header .content {
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(30, 55, 90, 0.18);
+  background: rgba(255, 255, 255, 0.70);
+  border: 2px solid #2c5fa8;
   border-radius: 10px;
   padding: 1.4rem 1.6rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -201,9 +201,9 @@ ul.icons li a:active {
 
 /* --- Navigation contrast --- */
 #header nav ul li a {
-  background: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.72);
   color: #1c2330 !important;
-  border-color: rgba(30, 55, 90, 0.28) !important;
+  border: 2px solid #2c5fa8 !important;
 }
 
 #header nav ul li a:hover {
