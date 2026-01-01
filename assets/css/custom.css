@@ -17,7 +17,7 @@
 /* Light overlay for readability */
 #bg:after{
   background-image: none !important;
-  background-color: rgba(255,255,255,0.94) !important;
+  background-color: rgba(255,255,255,0.88) !important;
   filter: none !important;
 }
 
@@ -179,7 +179,7 @@ ul.icons li a:active {
 /* Hero panel: more transparent + blurred background behind */
 #header .content {
   background: rgba(255, 255, 255, 0.50);
-  border: 2px solid #2c5fa8;
+  border: 1px solid #2c5fa8;
   border-radius: 10px;
   padding: 1.4rem 1.6rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -207,7 +207,7 @@ ul.icons li a:active {
 #header nav ul li a {
   background: rgba(255,255,255,0.45);
   color: #1c2330 !important;
-  border: 2px solid #2c5fa8 !important;
+  border: 1px solid #2c5fa8 !important;
 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -222,11 +222,6 @@ ul.icons li a:active {
   #header .content {
     background: rgba(255, 255, 255, 0.78);
   }
-
-  #header nav ul li a {
-    background: rgba(255,255,255,0.75);
-  }
-}
 
 #header nav ul li a:hover {
   background: rgba(255,255,255,0.90);
