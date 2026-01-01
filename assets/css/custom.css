@@ -1,0 +1,172 @@
+:root{
+  --accent:#2b6cb0;
+  --bg:#f5f7fa;
+  --text:#1b1f22;
+  --panel:rgba(255,255,255,0.92);
+  --border:rgba(27,31,34,0.18);
+}
+
+/* Background: subtle institutional architecture with strong readability overlay */
+#bg:before{
+  background-image: url("../images/architecture-bg.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Light overlay for readability */
+#bg:after{
+  background-image: none !important;
+  background-color: rgba(255,255,255,0.90) !important;
+  filter: none !important;
+}
+
+/* Panels */
+#main article{
+  background-color:var(--panel);
+  color:var(--text);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+#main article h2.major{
+  border-bottom-color:var(--border);
+}
+#main article h2, #main article h3, #main article h4{
+  color:var(--text);
+}
+
+/* Header readability */
+#header .content{
+  background: rgba(255,255,255,0.35);
+  border-color: rgba(27,31,34,0.18);
+}
+#header .content .inner{
+  text-align:left;
+}
+#header h1{
+  letter-spacing:0.15em;
+}
+#header p{
+  color:rgba(27,31,34,0.85);
+}
+
+/* Links */
+a{
+  color:var(--accent);
+  border-bottom-color:rgba(43,108,176,0.35);
+}
+a:hover{
+  border-bottom-color:rgba(43,108,176,0.75);
+}
+
+/* Logo ring */
+#header .logo{
+  border-color:rgba(43,108,176,0.6);
+}
+#header .logo .icon:before{
+  color:var(--accent);
+}
+
+/* Simple button system (Dimension doesn't expose a strong primary by default) */
+a.button, .button, input[type="submit"], input[type="button"], button{
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  appearance:none;
+  display:inline-block;
+  padding:0 1.25rem;
+  line-height:2.75rem;
+  height:2.75rem;
+  border-radius:0.5rem;
+  border:1px solid rgba(43,108,176,0.55);
+  color:var(--accent);
+  text-decoration:none;
+  background:transparent;
+  font-weight:600;
+  letter-spacing:0.05em;
+  cursor:pointer;
+}
+a.button:hover, .button:hover, input[type="submit"]:hover, input[type="button"]:hover, button:hover{
+  background:rgba(43,108,176,0.08);
+}
+a.button.primary, .button.primary, input[type="submit"].primary{
+  background:var(--accent);
+  color:#fff !important;
+  border-color:var(--accent);
+}
+a.button.primary:hover, .button.primary:hover, input[type="submit"].primary:hover{
+  filter:brightness(0.96);
+}
+
+/* Language switcher */
+.lang-switch{
+  display:flex;
+  gap:0.6rem;
+  justify-content:center;
+  margin: 0.75rem 0 0 0;
+  font-size:0.85rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+.lang-switch a{
+  border-bottom:none;
+  padding:0.25rem 0.5rem;
+  border-radius:0.4rem;
+  color:rgba(27,31,34,0.85);
+  box-shadow: inset 0 0 0 1px rgba(27,31,34,0.18);
+}
+.lang-switch a:hover{
+  background:rgba(43,108,176,0.08);
+  color:var(--text);
+}
+.lang-switch a.is-active{
+  color:#fff;
+  background:var(--accent);
+  box-shadow:none;
+}
+
+/* Make nav feel less "artsy" */
+#header nav ul{
+  text-transform:none;
+  letter-spacing:0.06em;
+}
+
+/* Base text on light background */
+body, input, select, textarea {
+  color: var(--text);
+}
+
+/* Replace white borders/text with subtle dark */
+#header nav ul li a {
+  box-shadow: inset 0 0 0 1px var(--border);
+  color: rgba(27,31,34,0.9);
+}
+#header nav ul li a:hover {
+  background-color: rgba(43,108,176,0.08);
+}
+#header nav ul li a:active {
+  background-color: rgba(43,108,176,0.16);
+}
+
+/* Icons border */
+ul.icons li a {
+  box-shadow: inset 0 0 0 1px var(--border);
+  color: rgba(27,31,34,0.9);
+}
+ul.icons li a:hover {
+  background-color: rgba(43,108,176,0.08);
+}
+ul.icons li a:active {
+  background-color: rgba(43,108,176,0.16);
+}
+
+/* Header lines */
+#header .content {
+  border-color: var(--border);
+}
+
+/* Article close button */
+#main .close:before {
+  color: rgba(27,31,34,0.75);
+}
+#main .close:hover:before {
+  color: rgba(27,31,34,0.95);
+}
