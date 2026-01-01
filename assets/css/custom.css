@@ -17,7 +17,7 @@
 /* Light overlay for readability */
 #bg:after{
   background-image: none !important;
-  background-color: rgba(255,255,255,0.90) !important;
+  background-color: rgba(255,255,255,0.94) !important;
   filter: none !important;
 }
 
@@ -170,3 +170,55 @@ ul.icons li a:active {
 #main .close:hover:before {
   color: rgba(27,31,34,0.95);
 }
+
+/* =====================================================
+   HERO READABILITY & CONTRAST – BIEL
+   ===================================================== */
+
+/* --- Hero readability panel --- */
+#header .content {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(30, 55, 90, 0.18);
+  border-radius: 10px;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  backdrop-filter: blur(6px);
+}
+
+/* --- Hero typography --- */
+#header .content h1,
+#header .content h2,
+#header .content h3,
+#header .content p {
+  color: #1c2330 !important;
+}
+
+#header .content p {
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+}
+
+/* --- Navigation contrast --- */
+#header nav ul li a {
+  background: rgba(255,255,255,0.75);
+  color: #1c2330 !important;
+  border-color: rgba(30, 55, 90, 0.28) !important;
+}
+
+#header nav ul li a:hover {
+  background: rgba(255,255,255,0.90);
+}
+
+/* --- Stronger primary CTA --- */
+#header .button.primary,
+#header input[type="submit"].primary,
+#header input[type="reset"].primary,
+#header input[type="button"].primary,
+#header button.primary,
+#header .actions .primary {
+  font-weight: 600 !important;
+  letter-spacing: 0.06em;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+}
+
