@@ -54,7 +54,7 @@ a:hover{
 
 /* Logo ring */
 #header .logo{
-  display: none !important;
+  border-color: rgba(27,31,34,0.25);
 }
 #header .logo .icon:before{
  color: rgba(27,31,34,0.65) !important;
