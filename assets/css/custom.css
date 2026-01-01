@@ -259,13 +259,10 @@ body:not(.is-preload) #bg:before { opacity: 1; }
 body:not(.is-preload) #bg:after  { opacity: 1; background-color: rgba(255,255,255,0.90) !important; }
 
 /* =====================================================
-   Proper fade-in on load (dark -> background) with image
-   Uses:
-   - #bg:before = image + light overlay (gradient layer)
-   - #bg:after  = dark curtain that fades out
+   Robust fade-in: start dark, then fade to background
    ===================================================== */
 
-/* 1) Background image + your normal light overlay in ONE layer */
+/* Background image + light overlay (always visible) */
 #bg:before {
   background-image:
     linear-gradient(rgba(255,255,255,0.90), rgba(255,255,255,0.90)),
@@ -276,29 +273,21 @@ body:not(.is-preload) #bg:after  { opacity: 1; background-color: rgba(255,255,25
   opacity: 1 !important;
 }
 
-/* 2) Dark curtain above the background that will fade out */
+/* Dark curtain: DEFAULT = visible */
 #bg:after {
   background-image: none !important;
   background-color: rgba(0,0,0,0.85) !important;
-  opacity: 0; /* default = hidden after load */
-}
 
-/* Animate the curtain opacity */
-#bg:after {
-  transition: opacity 1.2s ease;
+  /* Start visible (important) */
+  opacity: 1 !important;
+
+  /* Animate the fade-out */
+  transition: opacity 1.4s ease !important;
   will-change: opacity;
 }
 
-/* During initial load, show the dark curtain */
-body.is-preload #bg:after {
-  opacity: 1 !important;
+/* After preload ends, fade the curtain away */
+body:not(.is-preload) #bg:after {
+  opacity: 0 !important;
 }
 
-/* Mobile: optional – keep it simple */
-@media (max-width: 768px) {
-  #bg:before {
-    background-image:
-      linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
-      url("../images/architecture-bg.jpg") !important;
-  }
-}
